@@ -1,15 +1,41 @@
 package cn.edu.hcnu.bean;
 
-import java.util.Date;
+import java.util.Set;
 
 public class Flight {
+    private String id;
+    private String flightId;
     private String planeType;  //机型
-    private String orginCity; //出发城市
-    private String destinationCity;  //到达城市
-    private Date startTime;  //出发时间
-    private Date endTime;  //到达时间
-    private Date flightTime;  //飞行时间
-    private float ticketPrice;  //机票价格
+    private int currentSeatsNum;
+    private String departureAirPort;
+    private String destinationAirPort;
+    private String departureTime;
+
+    public Flight(String id, String flightId, String planeType, int currentSeatsNum, String departureAirPort, String destinationAirPort, String departureTime) {
+        this.id = id;
+        this.flightId = flightId;
+        this.planeType = planeType;
+        this.currentSeatsNum = currentSeatsNum;
+        this.departureAirPort = departureAirPort;
+        this.destinationAirPort = destinationAirPort;
+        this.departureTime = departureTime;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getFlightId() {
+        return flightId;
+    }
+
+    public void setFlightId(String flightId) {
+        this.flightId = flightId;
+    }
 
     public String getPlaneType() {
         return planeType;
@@ -19,51 +45,47 @@ public class Flight {
         this.planeType = planeType;
     }
 
-    public String getOrginCity() {
-        return orginCity;
+    public int getCurrentSeatsNum() {
+        return currentSeatsNum;
     }
 
-    public void setOrginCity(String orginCity) {
-        this.orginCity = orginCity;
+    public void setCurrentSeatsNum(int currentSeatsNum) {
+        this.currentSeatsNum = currentSeatsNum;
     }
 
-    public String getDestinationCity() {
-        return destinationCity;
+    public String getDepartureAirPort() {
+        return departureAirPort;
     }
 
-    public void setDestinationCity(String destinationCity) {
-        this.destinationCity = destinationCity;
+    public void setDepartureAirPort(String departureAirPort) {
+        this.departureAirPort = departureAirPort;
     }
 
-    public Date getStartTime() {
-        return startTime;
+    public String getDestinationAirPort() {
+        return destinationAirPort;
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
+    public void setDestinationAirPort(String destinationAirPort) {
+        this.destinationAirPort = destinationAirPort;
     }
 
-    public Date getEndTime() {
-        return endTime;
+    public String getDepartureTime() {
+        return departureTime;
     }
 
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
+    public void setDepartureTime(String departureTime) {
+        this.departureTime = departureTime;
     }
 
-    public Date getFlightTime() {
-        return flightTime;
-    }
-
-    public void setFlightTime(Date flightTime) {
-        this.flightTime = flightTime;
-    }
-
-    public float getTicketPrice() {
-        return ticketPrice;
-    }
-
-    public void setTicketPrice(float ticketPrice) {
-        this.ticketPrice = ticketPrice;
+    @Override
+    public String toString() {
+        return "Flight{" +
+                ", 航班ID='" + flightId + '\'' +
+                ", 机型='" + planeType + '\'' +
+                ", 座位数=" + currentSeatsNum +
+                ", 起飞机场='" + departureAirPort + '\'' +
+                ", 目的机场='" + destinationAirPort + '\'' +
+                ", 起飞时间='" + departureTime + '\'' +
+                '}';
     }
 }
